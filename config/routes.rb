@@ -1,8 +1,14 @@
 Fhe::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/about"
+
   resources :lessons
   resources :users
   
   match "/home(/:name)" => "home#index"  
+  match "(/:name)" => "home#index"
+  
   get "home/index"
 
   root :to => "home#index"
