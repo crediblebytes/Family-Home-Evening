@@ -6,9 +6,9 @@ Fhe::Application.routes.draw do
   resources :lessons
   resources :users
   
-  match "/home(/:name)" => "home#index"  
-  match "(/:name)" => "home#index"
-  
+  #match "/home(/:name)" => "home#index"  
+  #match "(/:name)" => "home#index"
+
   get "home/index"
 
   root :to => "home#index"
