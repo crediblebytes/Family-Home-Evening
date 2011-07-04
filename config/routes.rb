@@ -1,17 +1,20 @@
 Fhe::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/about"
+  get "users/new"
+
+  root :to => "home#index"
+
+  match '/signup',  :to => 'users#new'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
+  match '/signin', :to => 'pages#signin'
+
 
   resources :lessons
   resources :users
   
   #match "/home(/:name)" => "home#index"  
   #match "(/:name)" => "home#index"
-
-  get "home/index"
-
-  root :to => "home#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
