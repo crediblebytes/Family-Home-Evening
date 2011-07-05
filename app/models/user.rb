@@ -21,9 +21,9 @@ class User < ActiveRecord::Base
 	                  :format   => { :with => email_regex },
 	                  :uniqueness => { :case_sensitive => false }
 
-	# Automatically create the virtual attribute 'password_confirmation'.
+	
   	validates :password, :presence     => true,
-                         :confirmation => true,
+                         :confirmation => true, #creates the virtual attribute 'password_confirmation'
                        	 :length       => { :within => 6..40 }
 
     # Register callback
@@ -41,23 +41,28 @@ class User < ActiveRecord::Base
     	return nil
     end
 
-    private
+    def self.authenticate_with_salt(id, cookie_salt)
+    	user = find_by_id(id)
+    	(user && user.salt == cookie_salt) ? user : nil
+    end
+    
+    	private
 
-    	def encrypt_password
-    		self.salt = make_salt if new_record?
-    		self.encrypted_password = encrypt(password)
-    	end
+    def encrypt_password
+    	self.salt = make_salt if new_record?
+    	self.encrypted_password = encrypt(password)
+    end
 
-    	def encrypt(string)
-    		secure_hash("#{salt}--#{string}")
-    	end
+    def encrypt(string)
+    	secure_hash("#{salt}--#{string}")
+    end
 
-    	def make_salt
-    		secure_hash("#{Time.now.utc}--#{password}")
-    	end
+    def make_salt
+    	secure_hash("#{Time.now.utc}--#{password}")
+    end
 
-    	def secure_hash(string)
-    		Digest::SHA2.hexdigest(string)
-    	end
+    def secure_hash(string)
+    	Digest::SHA2.hexdigest(string)
+    end
 
 end

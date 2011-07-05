@@ -1,16 +1,20 @@
 Fhe::Application.routes.draw do
 
 
+  get "sessions/new"
+
   root :to => "home#index"
 
   match '/signup',  :to => 'users#new'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
-  match '/signin', :to => 'pages#signin'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
 
   resources :lessons
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
   
   #match "/home(/:name)" => "home#index"  
   #match "(/:name)" => "home#index"
