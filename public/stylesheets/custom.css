@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #82D5DE;
+  background: #84BF49;
 }
 
 header {
@@ -11,14 +11,14 @@ header {
 }
 
 header img {
-  background: #E6F6F8;
+  background: #84BF49;
 }
 
 section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #E6F6F8;
+  background: #F2F2F2;
 }
 
 section h1 {
@@ -47,7 +47,7 @@ nav {
 }
 
 nav {
-  background-color: #E6F6F8;
+  background-color: #F2F2F2;
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -89,33 +89,20 @@ footer nav {
   float: none;
 }
 
-/* Present button */
-a.present_button {
+/* Large button */
+a.large_button {
   margin-left: auto;
   margin-right: auto;
   display: block;
   text-align: center;
-  width: 190px;
+  width: 100px;
   color: #fff;
-  background: #006400;
+  background: #0F50A6;
   font-size: 150%;
   font-weight: bold;
-  padding: 20px;
+  padding: 15px;
 }
 
-/* Sign up button */
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
-}
 
 /* Round corners */
 .round {
@@ -192,4 +179,13 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+/* User view */
+ul.users {
+  margin-top: 1em;
+}
+
+.users li {
+  list-style: none;
 }

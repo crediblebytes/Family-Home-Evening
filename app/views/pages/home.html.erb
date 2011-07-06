@@ -1,5 +1,14 @@
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>Help</p>
+<h1>"Lessons learned in the home, last the longest." </h1>
+<blockquote>-Thomas S. Monson</blockquote>
+<% if signed_in? %>
+	<%= link_to "Profile", "#", :class => "large_button round" %><br />
+	<%= link_to "Lessons", "#", :class => "large_button round" %><br />
+	<%= link_to "Members", "#", :class => "large_button round" %>
+
+
+<% else %>
+	<%= link_to "Sign up", signup_path, :class => "large_button round" %><br />
+	<%= link_to "Sign in", signin_path, :class => "large_button round" %>
+<% end %>
 

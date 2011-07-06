@@ -3,11 +3,11 @@ Fhe::Application.routes.draw do
 
   get "sessions/new"
 
-  root :to => "home#index"
+  root :to => "pages#home"
 
   match '/signup',  :to => 'users#new'
   match '/about',   :to => 'pages#about'
-  match '/help',    :to => 'pages#help'
+  match '/help',   :to => 'pages#help'
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
 
