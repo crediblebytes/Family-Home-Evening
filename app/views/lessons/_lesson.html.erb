@@ -1,0 +1,15 @@
+<tr>
+  <td class="lesson">
+  	<%= link_to lesson.title, lesson %><br />
+
+    <span class="timestamp">
+      Created <%= time_ago_in_words(lesson.created_at) %> ago.
+    </span>
+    <%= link_to "delete", lesson, :method => :delete, 
+  	                              :confirm => "You sure?",
+                                  :title => "Delete #{lesson.content}" %><br />
+  </td>
+</tr>
+
+
+

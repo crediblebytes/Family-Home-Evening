@@ -189,3 +189,59 @@ ul.users {
 .users li {
   list-style: none;
 }
+
+/* Lesson */
+h1.lesson {
+  margin-bottom: 0.3em;
+}
+
+table.lessons {
+  margin-top: 1em;
+}
+
+table.lessons tr {
+  height: 70px;
+}
+
+table.lessons tr td.gravatar {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  width: 50px;
+}
+
+table.lessons tr td.lesson {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.lessons tr td.lesson span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+div.user_info a {
+  text-decoration: none;
+}
+
+div.user_info span.user_name {
+  position: absolute;
+}
+
+div.user_info span.lessons {
+  font-size: 80%;
+}
+
+form.new_lesson {
+  margin-bottom: 2em;
+}
+
+form.new_lesson textarea {
+  height: 4em;
+  margin-bottom: 0;
+}

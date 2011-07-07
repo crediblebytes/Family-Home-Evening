@@ -12,9 +12,10 @@ Fhe::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
 
 
-  resources :lessons
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :lessons
+
   
   #match "/home(/:name)" => "home#index"  
   #match "(/:name)" => "home#index"

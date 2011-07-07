@@ -16,5 +16,12 @@ namespace :db do
                    :password => password,
                    :password_confirmation => password)
     end
+    #Fill in lessons for first 6 users
+    User.all(:limit => 6).each do |user|
+      50.times do
+        user.lessons.create!(:title => Faker::Lorem.words(4), :content => Faker::Lorem.sentence(5))
+      end
+    end
+
   end
 end

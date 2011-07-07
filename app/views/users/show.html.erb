@@ -5,10 +5,19 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <% unless @user.lessons.empty? %>
+        <table class="lessons" summary="Lessons">
+          <!-- automatically renders each lesson in the @lessons using _lesson.html.erb partial -->
+          <%= render @lessons %> 
+        </table>
+        <%= will_paginate @lessons %>
+      <% end %>
+
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %>
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
+      <strong>Lessons</strong> <%= @user.lessons.count %>
     </td>
   </tr>
 </table>
