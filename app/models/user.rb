@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 	attr_accessor :password #virtual attribute has no column in database
 	attr_accessible :name, :email, :password, :password_confirmation
 
-    has_many :lessons, :dependent => :destroy # creates association
+    has_many :lessons, :dependent => :destroy # creates association, lessons are destroyed when user is
 
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # In this case only need to for edit and update.
   before_filter :authenticate, :only => [:index, :edit, :update]
   before_filter :correct_user, :only => [:edit, :update] 
-  before_filter :admin_user,   :only => :destroy
+  before_filter :admin_user,   :only => [:destroy, :index]
 
 
   def new

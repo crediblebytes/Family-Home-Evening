@@ -5,8 +5,8 @@ class Lesson < ActiveRecord::Base
 	belongs_to :user 
 
 	# Validation
-	validates :title,   :presence => true, :length => { :maximum => 70 }
-	validates :content, :presence => true, :length => { :maximum => 140 }
+	validates :title,   :presence => true, :length => { :maximum => 100 }
+	validates :content, :presence => true #:length => { :minimum => 10 }
   	validates :user_id, :presence => true
 
 

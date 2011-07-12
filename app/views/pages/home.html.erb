@@ -2,8 +2,8 @@
 <h1>"Lessons learned in the home, last the longest." </h1>
 <blockquote>-Thomas S. Monson</blockquote>
 <% if signed_in? %>
-	<%= link_to "Profile", "#", :class => "large_button round" %><br />
-	<%= link_to "Lessons", "#", :class => "large_button round" %><br />
+	<%= link_to "Profile", current_user , :class => "large_button round" %><br />
+	<%= link_to "Lessons", lessons_path, :class => "large_button round" %><br />
 	<%= link_to "Members", "#", :class => "large_button round" %>
 
 

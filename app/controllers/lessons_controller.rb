@@ -15,7 +15,8 @@ class LessonsController < ApplicationController
 
   def index
     @title = "All lessons"
-    @lessons = current_user.lessons.paginate(:page => params[:page])
+    @user = current_user
+    @lessons = @user.lessons.paginate(:page => params[:page])
   end
 
   def show
