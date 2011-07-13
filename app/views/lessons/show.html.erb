@@ -1,20 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @lesson.title %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @lesson.user_id %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @lesson.content %>
-</p>
+<h1><%= @lesson.title %></h1>
+<p><%= link_to "Edit", edit_lesson_path(@lesson) %> this lesson</p>
+<span class="content"><%= raw(@lesson.content) %></span>
 
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>

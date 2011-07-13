@@ -5,6 +5,7 @@
     <span class="timestamp">
       Created <%= time_ago_in_words(lesson.created_at) %> ago.
     </span>
+    <%= link_to "edit", edit_lesson_path(lesson) %>
     <%= link_to "delete", lesson, :method => :delete, 
   	                              :confirm => "You sure?",
                                   :title => "Delete #{lesson.content}" %><br />

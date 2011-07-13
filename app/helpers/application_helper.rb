@@ -15,4 +15,6 @@ module ApplicationHelper
     	image_tag("logo.png", :alt => "Family Home Evening logo", :class => "round")
   	end
 
+
+
 end

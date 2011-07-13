@@ -1,5 +1,5 @@
 .container {
-  width: 710px;
+  width: 850px;
 }
 
 body {
@@ -80,7 +80,7 @@ nav ul li a:hover {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+  width: 850px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -190,6 +190,8 @@ ul.users {
   list-style: none;
 }
 
+
+
 /* Lesson */
 h1.lesson {
   margin-bottom: 0.3em;
@@ -244,4 +246,11 @@ form.new_lesson {
 form.new_lesson textarea {
   height: 4em;
   margin-bottom: 0;
+}
+
+
+textarea.mceEditor
+{
+    height: 500px;
+    width: 710px;
 }
