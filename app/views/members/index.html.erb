@@ -1,0 +1,32 @@
+
+
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <% unless @user.members.empty? %>
+      <% @members.each do |member| %>
+        <h1>
+          <% if member.pic? %>
+            <%= image_tag @member.pic.url(:thumb) %>
+          <% else %>
+            <%= gravatar_for member %>
+          <% end %>
+          <%= image_tag member.pic.url(:thumb) %>
+          <%= member.name %><br />
+        </h1>
+        <div>Birthday: <%= member.birthdate %></div>
+        <%= link_to "Edit", edit_member_path(member) %>
+        <%= link_to "Remove", member, :method => :delete, 
+                                      :confirm => "You sure?",
+                                      :title => "Delete #{member.name}" %>
+      <% end %>
+      <% end %>
+
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>Members</strong> <%= @user.members.count %><br />
+      <%= link_to "Create New", new_member_path %><br />
+    </td>
+  </tr>
+</table>

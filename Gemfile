@@ -4,7 +4,9 @@ gem 'rails', '3.0.9'
 gem 'sqlite3', '1.3.3'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
-gem 'tiny_mce'
+gem 'tiny_mce', '0.1.4'
+gem 'paperclip', '2.3.15'
+gem 'aws-s3', '0.6.2'
 
 
 group :development do

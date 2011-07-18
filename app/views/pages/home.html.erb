@@ -4,7 +4,7 @@
 <% if signed_in? %>
 	<%= link_to "Profile", current_user , :class => "large_button round" %><br />
 	<%= link_to "Lessons", lessons_path, :class => "large_button round" %><br />
-	<%= link_to "Members", "#", :class => "large_button round" %>
+	<%= link_to "Family", members_path, :class => "large_button round" %>
 
 
 <% else %>

@@ -7,7 +7,7 @@
         	<%= gravatar_for @user %>
         	<%= @user.name %>
       	</h1>
-    	<h2>My Lessons:</h2>
+    <h3>My Lessons:</h3>
 		<% unless @user.lessons.empty? %>
 			<table class="lessons" summary="Lessons">
 			<!-- automatically renders each lesson in the @lessons using _lesson.html.erb partial -->
@@ -15,6 +15,26 @@
 			</table>
 			<%= will_paginate @lessons %>
 		<% end %>
+
+    <h3>Public Lessons:</h3>
+    <% unless @public_lessons.empty? %>
+      <table class="lessons" summary="Lessons">
+      <% @public_lessons.each do |lesson| %>
+      <tr>
+        <td class="lesson">
+          <%= link_to lesson.title, lesson %><br />
+          <span class="timestamp">
+            Created by <%= link_to lesson.user.name, lesson.user %>.
+          </span>
+          <%= link_to "Add", edit_lesson_path(lesson) %>
+        </td>
+      </tr>
+      <% end %>
+      </table>
+    <% end %>
+
+
+
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />

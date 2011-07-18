@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
   before_filter :authenticate
   before_filter :authorized_user, :only => [:destroy, :edit, :update]
-  uses_tiny_mce(:only => [:new, :create, :edit], #later add :edit and :update
+  uses_tiny_mce(:only => [:new, :create, :edit, :update],
                 :options => {
                   :theme => 'advanced',
                   :browsers => %w{msie gecko},
@@ -27,6 +27,7 @@ class LessonsController < ApplicationController
     @title = "All lessons"
     @user = current_user
     @lessons = @user.lessons.paginate(:page => params[:page])
+    @public_lessons = Lesson.find(:all, :conditions => ["private = ? ", false])
   end
 
   def show

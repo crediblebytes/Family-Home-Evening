@@ -1,0 +1,12 @@
+development:
+  bucket: fhe-member
+  access_key_id: 'AKIAIG7I3ZRV4WWYCWAA'
+  secret_access_key: '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'
+test:
+  bucket: fhe-member
+  access_key_id: 'AKIAIG7I3ZRV4WWYCWAA'
+  secret_access_key: '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'
+production:
+  bucket: fhe-member
+  access_key_id: 'AKIAIG7I3ZRV4WWYCWAA'
+  secret_access_key: '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'

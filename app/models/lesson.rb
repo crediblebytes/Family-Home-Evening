@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
-	attr_accessible :title, :content #define what is editable through web
+	attr_accessible :title, :content, :private #define what is editable through web
 
 	# An association creates methods like lesson.user, user.lessons, user.lessons.create(), etc.
 	belongs_to :user 

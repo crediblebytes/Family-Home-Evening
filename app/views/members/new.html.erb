@@ -1,0 +1,23 @@
+<h1> Add New Family Member </h1>
+<%= form_for @member, :html => { :multipart => true } do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field"> 
+    <%= f.label :email %><br /> 
+    <%= f.text_field :email %>
+  </div>
+  <div class="field"> 
+    <%= f.label :birthdate %><br /> 
+    <%= f.date_select :birthdate, :start_year => 1910 %>
+  </div>
+  <div class="field"> 
+    <%= f.label :pic %><br /> 
+    <%= f.file_field :pic %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
