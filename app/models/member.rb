@@ -5,10 +5,12 @@ class Member < ActiveRecord::Base
    has_attached_file :pic, 
                      :styles => {:medium => "300x300>", :thumb => "100x100>"},
                      :storage => :s3,
-                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                     :path => "/uploads/:style/:id/:filename",
-                     :bucket => 'fhe-member',
-                     :s3_permissions => :public_read
+                     :s3_credentials => {
+                        :access_key_id => ENV['S3_KEY'],
+                        :secret_access_key => ENV['S3_SECRET']
+                     },
+                     :bucket => ENV['S3_BUCKET'],
+                     :path => "/:attachment/:id"
 
 
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
