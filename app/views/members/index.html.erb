@@ -7,11 +7,10 @@
       <% @members.each do |member| %>
         <h1>
           <% if member.pic? %>
-            <%= image_tag @member.pic.url(:thumb) %>
+            <%= image_tag member.pic.url %>
           <% else %>
             <%= gravatar_for member %>
           <% end %>
-          <%= image_tag member.pic.url(:thumb) %>
           <%= member.name %><br />
         </h1>
         <div>Birthday: <%= member.birthdate %></div>
