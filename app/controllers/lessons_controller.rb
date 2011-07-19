@@ -21,6 +21,15 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new if signed_in?
     @title = "Create new lesson"
+    unless params[:id].nil? 
+      #add a public lesson and make private
+      public_lesson = Lesson.find(params[:id])
+      @lesson = public_lesson.clone
+      @lesson.user_id = current_user
+      @lesson.private = true
+      @title = "Add public lesson"
+    end
+    
   end
 
   def index
@@ -42,7 +51,7 @@ class LessonsController < ApplicationController
       flash[:success] = "Lesson created!"
       redirect_to lessons_path
     else
-      render 'pages/home'
+      render 'lessons/new'
     end
   end
 

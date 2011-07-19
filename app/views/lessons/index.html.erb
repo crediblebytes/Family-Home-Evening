@@ -26,7 +26,7 @@
           <span class="timestamp">
             Created by <%= link_to lesson.user.name, lesson.user %>.
           </span>
-          <%= link_to "Add", edit_lesson_path(lesson) %>
+          <%= link_to "Add", new_lesson_path(:id => lesson) %>
         </td>
       </tr>
       <% end %>

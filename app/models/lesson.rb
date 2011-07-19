@@ -5,8 +5,11 @@ class Lesson < ActiveRecord::Base
 	belongs_to :user 
 
 	# Validation
-	validates :title,   :presence => true, :length => { :maximum => 100 }
-	validates :content, :presence => true #:length => { :minimum => 10 }
+	validates :title,   :presence => true, 
+                       :length => { :maximum => 100 },
+                       :uniqueness => { :scope => :user_id } , :if => :private?
+
+	validates :content, :presence => { :message => "cannot be empty." }
   	validates :user_id, :presence => true
 
 
