@@ -7,6 +7,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'tiny_mce', '0.1.4'
 gem 'paperclip', '2.3.15'
 gem 'aws-s3', '0.6.2'
+gem 'facebooker', '1.0.75'
 
 
 group :development do

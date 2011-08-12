@@ -37,9 +37,12 @@ GEM
     cocaine (0.1.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    facebooker (1.0.75)
+      json_pure (>= 1.0.0)
     faker (0.3.1)
     gravatar_image_tag (1.0.0.pre2)
     i18n (0.5.0)
+    json_pure (1.5.3)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -87,6 +90,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3 (= 0.6.2)
+  facebooker (= 1.0.75)
   faker (= 0.3.1)
   gravatar_image_tag (= 1.0.0.pre2)
   paperclip (= 2.3.15)
